@@ -6,7 +6,7 @@ namespace :dev do
     100.times do |_i|
       Contact.create(name: Faker::Name.name,
                      email: Faker::Internet.email,
-                     birthdate: Faker::Date.between(from: 2.days.ago, to: Date.today))
+                     birthdate: Faker::Date.between(from: 35.years.ago, to: 18.years.ago))
     end
   end
 end
