@@ -13,5 +13,11 @@ namespace :dev do
                      birthdate: Faker::Date.between(from: 35.years.ago, to: 18.years.ago),
                      kind: Kind.all.sample)
     end
+
+    Contact.all.each do |contact| 
+      Random.rand(5).times do |i|
+        Phone.create!(number: Faker::PhoneNumber.phone_number, contact: contact)
+      end
+    end
   end
 end
