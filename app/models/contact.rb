@@ -3,6 +3,7 @@
 class Contact < ApplicationRecord
   belongs_to :kind
   has_many :phones
+  accepts_nested_attributes_for :phones, allow_destroy: true
 
   def author
     'Felipe Koetz'
@@ -13,6 +14,6 @@ class Contact < ApplicationRecord
   end
 
   def as_json(_options = {})
-    super(methods: %i[kind_description author], root: true, include: :kind)
+    super(methods: %i[kind_description author], root: true, include: [:kind, :phones])
   end
 end
