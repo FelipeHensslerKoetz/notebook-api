@@ -18,6 +18,8 @@ namespace :dev do
       Random.rand(5).times do |i|
         Phone.create!(number: Faker::PhoneNumber.phone_number, contact: contact)
       end
+
+      Address.create!(street: Faker::Address.street_address, city: Faker::Address.city,contact: contact)
     end
   end
 end
